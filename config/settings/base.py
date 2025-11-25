@@ -14,7 +14,7 @@ import sys
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 root = lambda *x: os.path.join(BASE_DIR, *x)
 sys.path.insert(0, root('apps'))
@@ -31,7 +31,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-AUTH_USER_MODEL = "user.User"
+# AUTH_USER_MODEL = "user.User"
 
 # Application definition
 
@@ -42,8 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'apps.core',
-    'apps.user',
+    'core',
+    'user',
 ]
 
 MIDDLEWARE = [
