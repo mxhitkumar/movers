@@ -12,11 +12,16 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+	{% load static %}
+
+	<!-- Favicon icon -->
+	<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+
 	<!-- Core Style -->
 	<link rel="stylesheet" href="{% static 'css/style.css' %}">
 
 	<!-- Font Icons -->
-	<link rel="stylesheet" href="{% static 'css/font-icons.css' %}">
+	<link rel="stylesheet" href="{% static 'css/font-icons.css' %} ">
 
 	<!-- Plugins/Components CSS -->
 	<link rel="stylesheet" href="{% static 'css/components/datepicker.css' %}">
@@ -50,8 +55,8 @@
 					============================================= -->
 					<div id="logo" class="ms-auto ms-md-0">
 						<a href="index.html">
-							<img class="logo-default" srcset="images/logo.png, images/logo@2x.png 2x" src="images/logo@2x.png" alt="Canvas Logo">
-							<img class="logo-dark" srcset="images/logo-dark.png, images/logo-dark@2x.png 2x" src="images/logo-dark@2x.png" alt="Canvas Logo">
+							<img class="logo-default" srcset="{% static 'images/logo-dark.png' %}, {% static 'images/logo-dark@2x.png' %} 2x" src="{% static 'images/logo@2x.png'%}" alt="Canvas Logo">
+							<img class="logo-dark" srcset="{% static 'images/logo-dark.png' %}, {% static 'images/logo-dark@2x.png 2x' %}" src="{% static 'images/logo-dark@2x.png'%}" alt="Canvas Logo">
 						</a>
 					</div><!-- #logo end -->
 
@@ -126,7 +131,7 @@
 
 						</nav><!-- #primary-menu end -->
 
-						<form class="top-search-form" action="https://canvastemplate.com/search.html" method="get">
+						<form class="top-search-form" action="#" method="get">
 							<input type="text" name="q" class="form-control" value="" placeholder="Type &amp; Hit Enter.." autocomplete="off">
 						</form>
 
@@ -138,7 +143,7 @@
 
 		<!-- Slider
 		============================================= -->
-		<section id="slider" class="slider-element bg-color" style="height: auto; padding: 60px 0; background: url('demos/movers/images/bg-2.png') no-repeat center center / 100% 100%;">
+		<section id="slider" class="slider-element bg-color" style="height: auto; padding: 60px 0; background: url(' {% static "demos/movers/images/bg-2.png" %} ') no-repeat center center / 100% 100%;">
 
 			<div class="container mt-4" style="z-index: 2">
 				<div class="text-center">
@@ -163,7 +168,7 @@
 								<p class="mb-4">Shift to your new Home, So we're here. Please send us your Deatils &amp; our team will contact your email asap.</p>
 								<div class="form-widget">
 									<div class="form-result"></div>
-									<form class="row home-moving-form position-relative mb-0" action="https://canvastemplate.com/include/form.php" method="post" enctype="multipart/form-data">
+									<form class="row home-moving-form position-relative mb-0" action="#" method="post" enctype="multipart/form-data">
 										<div class="form-process">
 											<div class="css3-spinner">
 												<div class="css3-spinner-scaler"></div>
@@ -230,7 +235,7 @@
 								<p class="mb-4">Share your Office Shifting details by Filling out an Easy Form. Get Free Quotes from Verified Packers &amp; Movers Instantly.</p>
 								<div class="form-widget">
 									<div class="form-result"></div>
-									<form class="row office-moving-form position-relative mb-0" action="https://canvastemplate.com/include/form.php" method="post" enctype="multipart/form-data">
+									<form class="row office-moving-form position-relative mb-0" action="#" method="post" enctype="multipart/form-data">
 										<div class="form-process">
 											<div class="css3-spinner">
 												<div class="css3-spinner-scaler"></div>
@@ -296,7 +301,7 @@
 							<div class="tab-pane fade" id="others-moving" role="tabpanel" aria-labelledby="others-moving-tab">
 								<div class="form-widget">
 									<div class="form-result"></div>
-									<form class="row others-moving-form position-relative mb-0" action="https://canvastemplate.com/include/form.php" method="post" enctype="multipart/form-data">
+									<form class="row others-moving-form position-relative mb-0" action="#" method="post" enctype="multipart/form-data">
 										<div class="form-process">
 											<div class="css3-spinner">
 												<div class="css3-spinner-scaler"></div>
@@ -305,7 +310,7 @@
 
 										<div class="col-12 form-group">
 											<div class="input-group">
-												<span class="input-group-text bg-transparent"><img src="demos/movers/images/baggage.png" height="18" alt="baggage Icon"></span>
+												<span class="input-group-text bg-transparent"><img src="{% static 'demos/movers/images/baggage.png'%}" height="18" alt="baggage Icon"></span>
 												<select class="required form-select" name="others-moving-form-service" id="others-moving-form-service">
 													<option value="" disabled selected>-- Select Your Service --</option>
 													<option value="International Moving">International Moving</option>
@@ -395,7 +400,7 @@
 						</div>
 					</div>
 					<div class="col-lg-5 d-none d-lg-flex flex-wrap justify-content-center">
-						<img src="demos/movers/images/2.svg" alt="Image 1" class="d-flex align-self-end ms-5 mt-3">
+						<img src="{% static 'demos/movers/images/2.svg'%}" alt="Image 1" class="d-flex align-self-end ms-5 mt-3">
 					</div>
 				</div>
 			</div>
@@ -434,7 +439,7 @@
 						<div class="col-lg-8">
 							<div class="row align-items-center">
 								<div class="col-sm-6">
-									<img src="demos/movers/images/others/4.png" alt="Image 1">
+									<img src="{% static 'demos/movers/images/others/4.png'%}" alt="Image 1">
 								</div>
 								<div class="col-sm-6">
 									<h3>After you Share your Shifting details, Our Team will contact you.</h3>
@@ -449,12 +454,12 @@
 									<a target="_blank" href="https://icons8.com" class="color btn btn-sm p-0 btn-link"><u>illustration by Ouch.pics</u> <i class="bi-arrow-right"></i></a>
 								</div>
 								<div class="col-sm-6">
-									<img src="demos/movers/images/others/2.png" alt="Image 1">
+									<img src="{% static 'demos/movers/images/others/2.png'%}" alt="Image 1">
 								</div>
 							</div>
 							<div class="row align-items-center mt-5">
 								<div class="col-sm-6">
-									<img src="demos/movers/images/others/1.png" alt="Image 1">
+									<img src="{% static 'demos/movers/images/others/1.png'%}" alt="Image 1">
 								</div>
 								<div class="col-sm-6">
 									<h3>Deliver whenever you are Ready.</h3>
@@ -469,11 +474,11 @@
 
 				<div class="clear"></div>
 
-				<div class="section p-0 dark mb-0" style="background: linear-gradient(to right, rgba(25,102,221,0.2), rgba(25,102,221,0.5)), url('demos/movers/images/section/1.jpg') no-repeat center center / cover; min-height: 400px">
+				<div class="section p-0 dark mb-0" style="background: linear-gradient(to right, rgba(25,102,221,0.2), rgba(25,102,221,0.5)), url(' {% static "demos/movers/images/section/1.jpg" %}') no-repeat center center / cover; min-height: 400px">
 					<div class="container">
 						<div class="row justify-content-between mb-4" style="padding: 100px 0 160px;">
 							<div class="col-lg-5 col-md-6 offset-lg-1 pt-3">
-								<a href="https://www.youtube.com/watch?v=P3Huse9K6Xs" data-lightbox="iframe" class="play-video ms-3"><i class="bi-play"></i></a>
+								<a href="https://www.youtube.com/" data-lightbox="iframe" class="play-video ms-3"><i class="bi-play"></i></a>
 								<h2 class="display-4 fw-bold text-white mt-6">Services we can help you with.</h2>
 							</div>
 							<div class="col-lg-5 col-md-6 mb-0 mb-md-5">
@@ -512,7 +517,7 @@
 						<div class="row col-mb-50 col-mb-lg-80">
 							<div class="col-md-4">
 								<div class="feature-box media-box">
-									<div class="fbox-icon position-relative mb-4" style="background-image: url('demos/movers/images/featured-img/1.jpg');">
+									<div class="fbox-icon position-relative mb-4" style="background-image: url('{% static 'demos/movers/images/featured-img/1.jpg'%}');">
 										<i class="bi-house"></i>
 									</div>
 									<div class="fbox-content">
@@ -523,7 +528,7 @@
 							</div>
 							<div class="col-md-4">
 								<div class="feature-box media-box">
-									<div class="fbox-icon position-relative mb-4" style="background-image: url('demos/movers/images/featured-img/2.jpg');">
+									<div class="fbox-icon position-relative mb-4" style="background-image: url('{% static "demos/movers/images/featured-img/2.jpg" %}');">
 										<i class="bi-building"></i>
 									</div>
 									<div class="fbox-content">
@@ -534,7 +539,7 @@
 							</div>
 							<div class="col-md-4">
 								<div class="feature-box media-box">
-									<div class="fbox-icon position-relative mb-4" style="background-image: url('demos/movers/images/featured-img/3.jpg');">
+									<div class="fbox-icon position-relative mb-4" style="background-image: url('{% static "demos/movers/images/featured-img/3.jpg" %}');">
 										<i class="bi-globe"></i>
 									</div>
 									<div class="fbox-content">
@@ -556,7 +561,7 @@
 							</div>
 							<div class="col-md-4">
 								<div class="feature-box media-box">
-									<div class="fbox-icon position-relative mb-4" style="background-image: url('demos/movers/images/featured-img/1.jpg');">
+									<div class="fbox-icon position-relative mb-4" style="background-image: url('{% static "demos/movers/images/featured-img/1.jpg" %}');">
 										<i class="bi-car-front"></i>
 									</div>
 									<div class="fbox-content">
@@ -585,22 +590,22 @@
 
 				<div class="section-map mb-6 mt-6">
 					<div class="container">
-						<img src="demos/hosting/images/svg/map.png" alt="Map Image" class="img-fluid map-image">
+						<img src="{% static 'demos/hosting/images/svg/map.png'%}" alt="Map Image" class="img-fluid map-image">
 						<div class="map-title">
 							<h2 class="text-center">More than 21 Countries included in Our Network. Some of Our Most Popular Countries</h2>
 							<div class="d-flex justify-content-center">
 								<ul class="iconlist m-0 pe-5">
-									<li><img src="demos/hosting/images/flags/uk.png" alt="Country Flag"><a href="index.html#">United Kingdom</a></li>
-									<li><img src="demos/hosting/images/flags/us.png" alt="Country Flag"><a href="index.html#">USA</a></li>
-									<li><img src="demos/hosting/images/flags/br.png" alt="Country Flag"><a href="index.html#">Brazil</a></li>
-									<li><img src="demos/hosting/images/flags/sa.png" alt="Country Flag"><a href="index.html#">South Africa</a></li>
-									<li><img src="demos/hosting/images/flags/in.png" alt="Country Flag"><a href="index.html#">India</a></li>
+									<li><img src="{% static 'demos/hosting/images/flags/uk.png'%}" alt="Country Flag"><a href="#">United Kingdom</a></li>
+									<li><img src="{% static 'demos/hosting/images/flags/us.png'%}" alt="Country Flag"><a href="#">USA</a></li>
+									<li><img src="{% static 'demos/hosting/images/flags/br.png'%}" alt="Country Flag"><a href="#">Brazil</a></li>
+									<li><img src="{% static 'demos/hosting/images/flags/sa.png'%}" alt="Country Flag"><a href="#">South Africa</a></li>
+									<li><img src="{% static 'demos/hosting/images/flags/in.png'%}" alt="Country Flag"><a href="#">India</a></li>
 								</ul>
 								<ul class="iconlist m-0 ps-5">
-									<li><img src="demos/hosting/images/flags/si.png" alt="Country Flag"><a href="index.html#">Singapore</a></li>
-									<li><img src="demos/hosting/images/flags/ja.png" alt="Country Flag"><a href="index.html#">Japan</a></li>
-									<li><img src="demos/hosting/images/flags/au.png" alt="Country Flag"><a href="index.html#">Australia</a></li>
-									<li><img src="demos/hosting/images/flags/ca.png" alt="Country Flag"><a href="index.html#">Canada</a></li>
+									<li><img src="{% static 'demos/hosting/images/flags/si.png'%}" alt="Country Flag"><a href="#">Singapore</a></li>
+									<li><img src="{% static 'demos/hosting/images/flags/ja.png'%}" alt="Country Flag"><a href="#">Japan</a></li>
+									<li><img src="{% static 'demos/hosting/images/flags/au.png'%}" alt="Country Flag"><a href="#">Australia</a></li>
+									<li><img src="{% static 'demos/hosting/images/flags/ca.png'%}" alt="Country Flag"><a href="#">Canada</a></li>
 									<li><a href="index.html#" class="text-black-50">See all..</a></li>
 								</ul>
 							</div>
@@ -659,7 +664,7 @@
 								<div class="col-md-6">
 									<div class="bg-white shadow-sm d-flex justify-content-center flex-column rounded">
 										<div class="d-flex flex-row mb-4 align-items-center">
-											<a href="index.html#"><img class="rounded-circle" src="demos/pet/images/testimonials/1.jpg" alt="Customer Testimonails" width="80" height="80"></a>
+											<a href="index.html#"><img class="rounded-circle" src="{% static 'demos/pet/images/testimonials/1.jpg'%}" alt="Customer Testimonails" width="80" height="80"></a>
 											<h4 class="ms-3 mb-0">John Doe</h4>
 										</div>
 										<div class="border-start border-width-3 ps-4">
@@ -684,7 +689,7 @@
 								</div>
 							</div>
 							<div class="grid-bg d-none d-md-block">
-								<img src="demos/movers/images/dot-grid.svg" alt="Dot Image">
+								<img src="{% static 'demos/movers/images/dot-grid.svg' %}" alt="Dot Image">
 							</div>
 						</div>
 					</div>
@@ -740,7 +745,7 @@
 
 				<div class="clear"></div>
 
-				<div class="section dark pt-0 mb-0 bg-color" style="background: url('demos/movers/images/bg-2.png') no-repeat center bottom / 100%; overflow: visible">
+				<div class="section dark pt-0 mb-0 bg-color" style="background: url(' {% static "demos/movers/images/bg-2.png" %}') no-repeat center bottom / 100%; overflow: visible">
 					<svg viewBox="0 0 1960 206.8" class="bg-white">
 						<path class="svg-themecolor" style="opacity:0.2;" d="M0,142.8A2337.49,2337.49,0,0,1,297.5,56.3C569.33-3.53,783.89.22,849.5,2.3c215.78,6.86,382.12,45.39,503.25,73.45,158.87,36.8,283.09,79.13,458.75,54.55A816.49,816.49,0,0,0,1983,86.8v110H0Z"></path>
 						<path class="svg-themecolor" d="M.5,152.8s498-177,849-150,1031,238,1134,94v110H.5Z"></path>
@@ -905,9 +910,9 @@
 
 	<!-- JavaScripts
 	============================================= -->
-	<script src="js/plugins.min.js"></script>
-	<script src="js/functions.bundle.js"></script>
-	<script src="js/components/datepicker.js"></script>
+	<script src="{% static 'js/plugins.min.js'%}"></script>
+	<script src="{% static 'js/functions.bundle.js'%}"></script>
+	<script src="{% static 'js/components/datepicker.js'%}"></script>
 
 	<script>
 		jQuery('.home-date').datepicker({
