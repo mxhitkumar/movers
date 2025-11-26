@@ -41,30 +41,20 @@
 
 <body class="stretched">
 
-	<!-- Document Wrapper
-	============================================= -->
 	<div id="wrapper">
 
-{% include "partials/header.html" %}
+	{% include "partials/header.html" %}
 
+	{% block content %}{% endblock content %}
 
-{% block content %}{% endblock content %}
+	{% include "partials/footer.html" %}
 
+		<div id="gotoTop" class="uil uil-angle-up"></div>
 
-
-{% include "partials/footer.html" %}
-
-
-	<!-- Go To Top
-	============================================= -->
-	<div id="gotoTop" class="uil uil-angle-up"></div>
-
-	</div><!-- #wrapper end -->
+	</div>
 
 {% block scripts %}
 
-		<!-- JavaScripts
-	============================================= -->
 	<script src="js/plugins.min.js"></script>
 	<script src="js/functions.bundle.js"></script>
 	<script src="js/components/datepicker.js"></script>
