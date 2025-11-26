@@ -1,86 +1,120 @@
 {% load static %}
-		<header id="header" class="dark header-size-sm" data-sticky-shrink="false">
-			<div class="container">
-				<div class="header-row">
+<header id="header" class="dark header-size-sm" data-sticky-shrink="false">
+	<div class="container">
+		<div class="header-row">
 
-					<div id="logo" class="ms-auto ms-md-0">
-						<a href="{% url "home" %}">
-							<img class="logo-default" srcset="{% static 'images/logo-dark.png' %}, {% static 'images/logo-dark@2x.png' %} 2x" src="{% static 'images/logo@2x.png'%}" alt="Canvas Logo">
-							<img class="logo-dark" srcset="{% static 'images/logo-dark.png' %}, {% static 'images/logo-dark@2x.png 2x' %}" src="{% static 'images/logo-dark@2x.png'%}" alt="Canvas Logo">
-						</a>
-					</div><!-- #logo end -->
+			<div id="logo" class="ms-auto ms-md-0">
+				<a href="{% url 'home' %}">
+					<img class="logo-default"
+						srcset="{% static 'images/logo-dark.png' %}, {% static 'images/logo-dark@2x.png' %} 2x"
+						src="{% static 'images/logo@2x.png'%}" alt="Expert Gati Packers">
+					<img class="logo-dark"
+						srcset="{% static 'images/logo-dark.png' %}, {% static 'images/logo-dark@2x.png 2x' %}"
+						src="{% static 'images/logo-dark@2x.png'%}" alt="Expert Gati Packers">
+				</a>
+			</div><!-- #logo end -->
 
-					<ul class="header-extras d-none d-sm-flex mx-auto mx-md-0 mb-4 mb-md-0">
-						<li>
-							<i class="i-plain bi-telephone m-0"></i>
-							<div class="he-text fw-normal text-white-50">
-								Call Us:
-								<span><a href="tel:+111-22-33-44" class="text-white fw-medium">+918199073923</a></span>
-							</div>
+			<ul class="header-extras d-none d-sm-flex mx-auto mx-md-0 mb-4 mb-md-0">
+				<li>
+					<i class="i-plain bi-telephone m-0"></i>
+					<div class="he-text fw-normal text-white-50">
+						Call Us:
+						<span><a href="tel:+111-22-33-44" class="text-white fw-medium">+918199073923</a></span>
+					</div>
+				</li>
+				<li>
+					<i class="i-plain bi-envelope m-0"></i>
+					<div class="he-text fw-normal text-white-50">
+						Email Us:
+						<span><a href="mailto:info@expertgatipackers.com" target="_top"
+								class="text-white fw-medium">info@expertgatipackers.com</a></span>
+					</div>
+				</li>
+			</ul>
+
+		</div>
+	</div>
+
+	<div id="header-wrap">
+		<div class="container">
+			<div class="header-row justify-content-between flex-row-reverse flex-lg-row">
+
+				<div class="header-misc">
+
+					<div id="top-search" class="header-misc-icon">
+						<a href="{% url 'home' %}#" id="top-search-trigger"><i class="uil uil-search"></i><i
+								class="bi-x-lg"></i></a>
+					</div><!-- #top-search end -->
+
+					<div class="header-buttons d-none d-sm-inline-block">
+						<a href="{% url 'home' %}#slider" data-scrollto="#slider" data-offset="-80"
+							class="button button-rounded button-white button-light button-small m-0">Get a Quote</a>
+					</div>
+
+				</div>
+
+				<div class="primary-menu-trigger">
+					<button class="cnvs-hamburger" type="button" title="Open Mobile Menu">
+						<span class="cnvs-hamburger-box"><span class="cnvs-hamburger-inner"></span></span>
+					</button>
+				</div>
+
+				<nav class="primary-menu with-arrows">
+
+					<ul class="menu-container">
+						<li class="menu-item current"><a class="menu-link" href="{% url 'home' %}">
+								<div>Home</div>
+							</a></li>
+						<li class="menu-item"><a class="menu-link" href="{% url 'ourcompany' %}">
+								<div>Our Company</div>
+							</a></li>
+						<li class="menu-item"><a class="menu-link" href="{% url 'rates' %}">
+								<div>Rates</div>
+							</a>
+							{% comment %} <ul class="sub-menu-container" data-class="up-lg:not-dark">
+								<li class="menu-item"><a class="menu-link" href="{% url 'rates' %}">
+										<div><i class="bi-house"></i>Home Moving</div>
+									</a></li>
+								<li class="menu-item"><a class="menu-link" href="{% url 'rates' %}">
+										<div><i class="bi-building"></i>Office Moving</div>
+									</a></li>
+								<li class="menu-item"><a class="menu-link" href="{% url 'rates' %}">
+										<div><i class="bi-globe"></i>International Moving</div>
+									</a></li>
+								<li class="menu-item"><a class="menu-link" href="{% url 'rates' %}">
+										<div><i class="fa-solid fa-paw"></i>Pet Shifting</div>
+									</a></li>
+								<li class="menu-item"><a class="menu-link" href="{% url 'rates' %}">
+										<div><i class="bi-car-front"></i>Car Shifting</div>
+									</a></li>
+								<li class="menu-item"><a class="menu-link" href="{% url 'rates' %}">
+										<div><i class="bi-truck"></i>Hire Truck</div>
+									</a></li>
+							</ul> {% endcomment %}
 						</li>
-						<li>
-							<i class="i-plain bi-envelope m-0"></i>
-							<div class="he-text fw-normal text-white-50">
-								Email Us:
-								<span><a href="mailto:info@expertgatipackers.com" target="_top" class="text-white fw-medium">info@expertgatipackers.com</a></span>
-							</div>
-						</li>
+						<li class="menu-item"><a class="menu-link" href="{% url 'team' %}">
+								<div>Team</div>
+							</a></li>
+						<li class="menu-item"><a class="menu-link" href="{% url 'faqs' %}">
+								<div>FAQs</div>
+							</a></li>
+						<li class="menu-item"><a class="menu-link" href="{% url 'blog' %}">
+								<div>Blog</div>
+							</a></li>
+						<li class="menu-item"><a class="menu-link" href="{% url 'contact' %}">
+								<div>Contact Us</div>
+							</a></li>
 					</ul>
 
-				</div>
+				</nav><!-- #primary-menu end -->
+
+				<form class="top-search-form" action="#" method="get">
+					<input type="text" name="q" class="form-control" value="" placeholder="Type &amp; Hit Enter.."
+						autocomplete="off">
+				</form>
+
 			</div>
-
-			<div id="header-wrap">
-				<div class="container">
-					<div class="header-row justify-content-between flex-row-reverse flex-lg-row">
-
-						<div class="header-misc">
-
-							<div id="top-search" class="header-misc-icon">
-								<a href="{% url "home" %}#" id="top-search-trigger"><i class="uil uil-search"></i><i class="bi-x-lg"></i></a>
-							</div><!-- #top-search end -->
-
-							<div class="header-buttons d-none d-sm-inline-block">
-								<a href="{% url "home" %}#slider" data-scrollto="#slider" data-offset="-80" class="button button-rounded button-white button-light button-small m-0">Get a Quote</a>
-							</div>
-
-						</div>
-
-						<div class="primary-menu-trigger">
-							<button class="cnvs-hamburger" type="button" title="Open Mobile Menu">
-								<span class="cnvs-hamburger-box"><span class="cnvs-hamburger-inner"></span></span>
-							</button>
-						</div> 
-
-						<nav class="primary-menu with-arrows">
-
-							<ul class="menu-container">
-								<li class="menu-item current"><a class="menu-link" href="{% url "home" %}"><div>Home</div></a></li>
-								<li class="menu-item"><a class="menu-link" href="{% url "ourcompany" %}"><div>Our Company</div></a></li>
-								<li class="menu-item"><a class="menu-link" href="{% url "rates" %}"><div>Rates</div></a>
-									{% comment %} <ul class="sub-menu-container" data-class="up-lg:not-dark">
-										<li class="menu-item"><a class="menu-link" href="{% url "rates" %}"><div><i class="bi-house"></i>Home Moving</div></a></li>
-										<li class="menu-item"><a class="menu-link" href="{% url "rates" %}"><div><i class="bi-building"></i>Office Moving</div></a></li>
-										<li class="menu-item"><a class="menu-link" href="{% url "rates" %}"><div><i class="bi-globe"></i>International Moving</div></a></li>
-										<li class="menu-item"><a class="menu-link" href="{% url "rates" %}"><div><i class="fa-solid fa-paw"></i>Pet Shifting</div></a></li>
-										<li class="menu-item"><a class="menu-link" href="{% url "rates" %}"><div><i class="bi-car-front"></i>Car Shifting</div></a></li>
-										<li class="menu-item"><a class="menu-link" href="{% url "rates" %}"><div><i class="bi-truck"></i>Hire Truck</div></a></li>
-									</ul> {% endcomment %}
-								</li>
-								<li class="menu-item"><a class="menu-link" href="{% url "team" %}"><div>Team</div></a></li>
-								<li class="menu-item"><a class="menu-link" href="{% url "faqs" %}"><div>FAQs</div></a></li>
-								<li class="menu-item"><a class="menu-link" href="{% url "blog" %}"><div>Blog</div></a></li>
-								<li class="menu-item"><a class="menu-link" href="{% url "contact" %}"><div>Contact Us</div></a></li>
-							</ul>
-
-						</nav><!-- #primary-menu end -->
-
-						<form class="top-search-form" action="#" method="get">
-							<input type="text" name="q" class="form-control" value="" placeholder="Type &amp; Hit Enter.." autocomplete="off">
-						</form>
-
-					</div>
-				</div>
-			</div>
-			<div class="header-wrap-clone"></div>
-		</header>
+		</div>
+	</div>
+	<div class="header-wrap-clone"></div>
+</header>
