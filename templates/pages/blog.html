@@ -1,140 +1,10 @@
-<!DOCTYPE html>
-<html dir="ltr" lang="en-US">
-<head>
+{% extends "base.html" %}
+{% load static %}
 
-	<meta http-equiv="content-type" content="text/html; charset=utf-8">
-	<meta http-equiv="x-ua-compatible" content="IE=edge">
-	<meta name="author" content="SemiColonWeb">
-	<meta name="description" content="Create Packers, Movers &amp; Shipping Websites with Canvas Template. Get Canvas to build powerful websites easily with the Highly Customizable &amp; Best Selling Bootstrap Template, today.">
 
-	<!-- Font Imports -->
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+{% block title %}Our Full-Range Services - Expert Gati Packers{% endblock title %}
 
-	<!-- Core Style -->
-	<link rel="stylesheet" href="{% static 'css/style.css' %}">
-
-	<!-- Font Icons -->
-	<link rel="stylesheet" href="{% static 'css/font-icons.css' %}">
-
-	<!-- Plugins/Components CSS -->
-	<link rel="stylesheet" href="{% static 'css/components/datepicker.css' %}">
-
-	<!-- Niche Demos -->
-	<link rel="stylesheet" href="{% static 'demos/movers/movers.css' %}">
-
-	<!-- Custom CSS -->
-	<link rel="stylesheet" href="{% static 'css/custom.css' %}">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-
-	<!-- Document Title
-	============================================= -->
-	<title>Blog - Movers Demo | Canvas</title>
-
-</head>
-
-<body class="stretched">
-
-	<!-- Document Wrapper
-	============================================= -->
-	<div id="wrapper">
-
-		<!-- Header
-		============================================= -->
-		<header id="header" class="dark header-size-sm" data-sticky-shrink="false">
-			<div class="container">
-				<div class="header-row">
-
-					<!-- Logo
-					============================================= -->
-					<div id="logo" class="ms-auto ms-md-0">
-						<a href="index.html">
-							<img class="logo-default" srcset="images/logo.png, images/logo@2x.png 2x" src="images/logo@2x.png" alt="Canvas Logo">
-							<img class="logo-dark" srcset="images/logo-dark.png, images/logo-dark@2x.png 2x" src="images/logo-dark@2x.png" alt="Canvas Logo">
-						</a>
-					</div><!-- #logo end -->
-
-					<ul class="header-extras d-none d-sm-flex mx-auto mx-md-0 mb-4 mb-md-0">
-						<li>
-							<i class="i-plain bi-telephone m-0"></i>
-							<div class="he-text fw-normal text-white-50">
-								Call Us:
-								<span><a href="tel:+111-22-33-44" class="text-white fw-medium">+918199073923</a></span>
-							</div>
-						</li>
-						<li>
-							<i class="i-plain bi-envelope m-0"></i>
-							<div class="he-text fw-normal text-white-50">
-								Email Us:
-								<span><a href="mailto:info@expertgatipackers.com" target="_top" class="text-white fw-medium">info@expertgatipackers.com</a></span>
-							</div>
-						</li>
-					</ul>
-
-				</div>
-			</div>
-
-			<div id="header-wrap">
-				<div class="container">
-					<div class="header-row justify-content-between flex-row-reverse flex-lg-row">
-
-						<div class="header-misc">
-
-							<!-- Top Search
-							============================================= -->
-							<div id="top-search" class="header-misc-icon">
-								<a href="blog.html#" id="top-search-trigger"><i class="uil uil-search"></i><i class="bi-x-lg"></i></a>
-							</div><!-- #top-search end -->
-
-							<!-- Header Buttons
-							============================================= -->
-							<div class="header-buttons d-none d-sm-inline-block">
-								<a href="blog.html#slider" data-scrollto="#slider" data-offset="-80" class="button button-rounded button-white button-light button-small m-0">Get a Quote</a>
-							</div>
-
-						</div>
-
-						<div class="primary-menu-trigger">
-							<button class="cnvs-hamburger" type="button" title="Open Mobile Menu">
-								<span class="cnvs-hamburger-box"><span class="cnvs-hamburger-inner"></span></span>
-							</button>
-						</div>
-
-						<!-- Primary Navigation
-						============================================= -->
-						<nav class="primary-menu with-arrows">
-
-							<ul class="menu-container">
-								<li class="menu-item"><a class="menu-link" href="index.html"><div>Home</div></a></li>
-								<li class="menu-item"><a class="menu-link" href="our-company.html"><div>Our Company</div></a></li>
-								<li class="menu-item"><a class="menu-link" href="rates.html"><div>Rates</div></a>
-									<ul class="sub-menu-container" data-class="up-lg:not-dark">
-										<li class="menu-item"><a class="menu-link" href="rates.html"><div><i class="bi-house"></i>Home Moving</div></a></li>
-										<li class="menu-item"><a class="menu-link" href="rates.html"><div><i class="bi-building"></i>Office Moving</div></a></li>
-										<li class="menu-item"><a class="menu-link" href="rates.html"><div><i class="bi-globe"></i>International Moving</div></a></li>
-										<li class="menu-item"><a class="menu-link" href="rates.html"><div><i class="fa-solid fa-paw"></i>Pet Shifting</div></a></li>
-										<li class="menu-item"><a class="menu-link" href="rates.html"><div><i class="bi-car-front"></i>Car Shifting</div></a></li>
-										<li class="menu-item"><a class="menu-link" href="rates.html"><div><i class="bi-truck"></i>Hire Truck</div></a></li>
-									</ul>
-								</li>
-								<li class="menu-item"><a class="menu-link" href="team.html"><div>Team</div></a></li>
-								<li class="menu-item"><a class="menu-link" href="faqs.html"><div>FAQs</div></a></li>
-								<li class="menu-item current"><a class="menu-link" href="blog.html"><div>Blog</div></a></li>
-								<li class="menu-item"><a class="menu-link" href="contact.html"><div>Contact Us</div></a></li>
-							</ul>
-
-						</nav><!-- #primary-menu end -->
-
-						<form class="top-search-form" action="https://canvastemplate.com/search.html" method="get">
-							<input type="text" name="q" class="form-control" value="" placeholder="Type &amp; Hit Enter.." autocomplete="off">
-						</form>
-
-					</div>
-				</div>
-			</div>
-			<div class="header-wrap-clone"></div>
-		</header><!-- #header end -->
+{% block content %}
 
 		<!-- Page Title
 		============================================= -->
@@ -149,8 +19,8 @@
 
 					<nav aria-label="breadcrumb">
 						<ol class="breadcrumb">
-							<li class="breadcrumb-item"><a href="blog.html#">Home</a></li>
-							<li class="breadcrumb-item"><a href="blog.html#">Movers</a></li>
+							<li class="breadcrumb-item"><a href="{% url "blog" %}#">Home</a></li>
+							<li class="breadcrumb-item"><a href="{% url "blog" %}#">Movers</a></li>
 							<li class="breadcrumb-item active" aria-current="page">Blog</li>
 						</ol>
 					</nav>
@@ -170,7 +40,7 @@
 
 						<div class="entry col-lg-4 col-md-6">
 							<div class="grid-inner card">
-								<a href="blog.html#" data-lightbox="image">
+								<a href="{% url "blog" %}#" data-lightbox="image">
 									<img src="demos/movers/images/blog/1.jpg" alt="Image" class="card-img-top">
 								</a>
 								<div class="p-4">
@@ -192,7 +62,7 @@
 
 						<div class="entry col-lg-4 col-md-6">
 							<div class="grid-inner card">
-								<a href="blog.html#" data-lightbox="image">
+								<a href="{% url "blog" %}#" data-lightbox="image">
 									<img src="demos/movers/images/blog/2.jpg" alt="Image" class="card-img-top">
 								</a>
 								<div class="p-4">
@@ -214,7 +84,7 @@
 
 						<div class="entry col-lg-4 col-md-6">
 							<div class="grid-inner card">
-								<a href="blog.html#" data-lightbox="image">
+								<a href="{% url "blog" %}#" data-lightbox="image">
 									<img src="demos/movers/images/blog/3.jpg" alt="Image" class="card-img-top">
 								</a>
 								<div class="p-4">
@@ -236,7 +106,7 @@
 
 						<div class="entry col-lg-4 col-md-6">
 							<div class="grid-inner card">
-								<a href="blog.html#" data-lightbox="image">
+								<a href="{% url "blog" %}#" data-lightbox="image">
 									<img src="demos/movers/images/blog/4.jpg" alt="Image" class="card-img-top">
 								</a>
 								<div class="p-4">
@@ -258,7 +128,7 @@
 
 						<div class="entry col-lg-4 col-md-6">
 							<div class="grid-inner card">
-								<a href="blog.html#" data-lightbox="image">
+								<a href="{% url "blog" %}#" data-lightbox="image">
 									<img src="demos/movers/images/blog/5.jpg" alt="Image" class="card-img-top">
 								</a>
 								<div class="p-4">
@@ -280,7 +150,7 @@
 
 						<div class="entry col-lg-4 col-md-6">
 							<div class="grid-inner card">
-								<a href="blog.html#" data-lightbox="image">
+								<a href="{% url "blog" %}#" data-lightbox="image">
 									<img src="demos/movers/images/blog/6.jpg" alt="Image" class="card-img-top">
 								</a>
 								<div class="p-4">
@@ -318,7 +188,7 @@
 									<h2 class="fw-semibold ls-0 text-transform-none mb-3" style="font-size: 44px; line-height: 1.3">Contact Our Movers Specialist</h2>
 									<p>Phosfluorescently develop customized relationships vis-a-vis B2C infomediaries.</p>
 								</div>
-								<a href="contact.html" class="button button-white button-light button-rounded fw-medium m-0">Get In Touch</a>
+								<a href="{% url "contact" %}" class="button button-white button-light button-rounded fw-medium m-0">Get In Touch</a>
 							</div>
 
 						</div>
@@ -327,159 +197,8 @@
 			</div>
 		</section><!-- #content end -->
 
-		<!-- Footer
-		============================================= -->
-		<footer id="footer" class="bg-transparent border-0">
 
-			<div class="container">
+{% endblock content %}
 
-				<!-- Footer Widgets
-				============================================= -->
-				<div class="footer-widgets-wrap pb-4">
 
-					<div class="row">
-
-						<div class="col-lg-2 col-md-2 col-6">
-							<div class="widget">
-
-								<h4 class="ls-0 mb-4 text-transform-none">Features</h4>
-
-								<ul class="list-unstyled iconlist ms-0">
-									<li class="mb-2"><a href="blog.html#">Help Center</a></li>
-									<li class="mb-2"><a href="blog.html#">Paid with Moblie</a></li>
-									<li class="mb-2"><a href="blog.html#">Status</a></li>
-									<li class="mb-2"><a href="blog.html#">Changelog</a></li>
-									<li class="mb-2"><a href="blog.html#">Contact Support</a></li>
-								</ul>
-
-							</div>
-						</div>
-						<div class="col-lg-2 col-md-2 col-6">
-							<div class="widget">
-
-								<h4 class="ls-0 mb-4 text-transform-none">Support</h4>
-
-								<ul class="list-unstyled iconlist ms-0">
-									<li class="mb-2"><a href="blog.html#">Home</a></li>
-									<li class="mb-2"><a href="our-company.html">About</a></li>
-									<li class="mb-2"><a href="faqs.html">FAQs</a></li>
-									<li class="mb-2"><a href="blog.html#">Support</a></li>
-									<li class="mb-2"><a href="contact.html">Contact</a></li>
-								</ul>
-
-							</div>
-						</div>
-						<div class="col-lg-2 col-md-2 col-6">
-							<div class="widget">
-
-								<h4 class="ls-0 mb-4 text-transform-none">Trending</h4>
-
-								<ul class="list-unstyled iconlist ms-0">
-									<li class="mb-2"><a href="blog.html#">Shop</a></li>
-									<li class="mb-2"><a href="blog.html#">Portfolio</a></li>
-									<li class="mb-2"><a href="blog.html#">Blog</a></li>
-									<li class="mb-2"><a href="blog.html#">Events</a></li>
-									<li class="mb-2"><a href="blog.html#">Forums</a></li>
-								</ul>
-
-							</div>
-						</div>
-						<div class="col-lg-2 col-md-2 col-6">
-							<div class="widget">
-
-								<h4 class="ls-0 mb-4 text-transform-none">Get to Know us</h4>
-
-								<ul class="list-unstyled iconlist ms-0">
-									<li class="mb-2"><a href="blog.html#">Corporate</a></li>
-									<li class="mb-2"><a href="blog.html#">Agency</a></li>
-									<li class="mb-2"><a href="blog.html#">eCommerce</a></li>
-									<li class="mb-2"><a href="blog.html#">Personal</a></li>
-									<li class="mb-2"><a href="blog.html#">OnePage</a></li>
-								</ul>
-
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-4 text-md-end">
-							<div class="widget">
-
-								<h4 class="ls-0 mb-4 text-transform-none">Headquarters:</h4>
-
-								<div>
-									<address>
-										Room No. 301, Tanmay Villa, Sector 9,<br>
-										Airoli, Navi Mumbai<br>>
-									</address>
-									<h3 class="mb-3"><a href="tel:+111-22-33-44"><i class="fa-solid fa-phone me-1" style="font-size: 22px;"></i> +918199073923</a></h3>
-									<div class="d-flex justify-content-md-end">
-										<a href="blog.html#" class="social-icon si-small text-white bg-facebook" title="Facebook">
-											<i class="fa-brands fa-facebook-f"></i>
-											<i class="fa-brands fa-facebook-f"></i>
-										</a>
-
-										<a href="blog.html#" class="social-icon si-small text-white bg-instagram" title="instagram">
-											<i class="bi-instagram"></i>
-											<i class="bi-instagram"></i>
-										</a>
-
-										<a href="blog.html#" class="social-icon si-small text-white bg-paypal" title="Paypal">
-											<i class="fa-brands fa-paypal"></i>
-											<i class="fa-brands fa-paypal"></i>
-										</a>
-
-										<a href="blog.html#" class="social-icon si-small text-white bg-wikipedia me-0" title="Apple Pay">
-											<i class="fa-brands fa-apple-pay"></i>
-											<i class="fa-brands fa-apple-pay"></i>
-										</a>
-									</div>
-								</div>
-
-							</div>
-						</div>
-
-					</div>
-
-				</div><!-- .footer-widgets-wrap end -->
-
-			</div>
-
-			<!-- Copyrights
-			============================================= -->
-			<div id="copyrights" class="bg-transparent">
-
-				<div class="container">
-
-					<div class="row justify-content-between align-items-center">
-						<div class="col-md-6 text-black-50">
-							Copyrights &copy; 2025 All Rights Reserved by expertgatipackers.
-						</div>
-
-						
-					</div>
-
-				</div>
-
-			</div><!-- #copyrights end -->
-
-		</footer><!-- #footer end -->
-
-	</div><!-- #wrapper end -->
-
-	<!-- Go To Top
-	============================================= -->
-	<div id="gotoTop" class="uil uil-angle-up"></div>
-
-	<!-- JavaScripts
-	============================================= -->
-	<script src="js/plugins.min.js"></script>
-	<script src="js/functions.bundle.js"></script>
-	<script src="js/components/datepicker.js"></script>
-
-	<script>
-		jQuery('.home-date').datepicker({
-			autoclose: true,
-			startDate: "today",
-		});
-	</script>
-
-</body>
-</html>
+{% block scripts %}{% endblock scripts %}
