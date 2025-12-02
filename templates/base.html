@@ -3,9 +3,186 @@
 <html dir="ltr" lang="en-US">
 
 <head>
+	<!-- Primary Meta Tags -->
+    <title>{{ seo.get_meta_title|default:"Expert Gati Packers and Movers Pune | Best Moving Company Mumbai & All India" }}</title>
+    <meta name="title" content="{{ seo.get_meta_title|default:'Expert Gati Packers and Movers Pune | Best Moving Company Mumbai & All India' }}" />
+    <meta name="description" content="{{ seo.get_meta_description|default:'Expert Gati Packers and Movers - Trusted moving services in Pune, Mumbai & across India. Professional home & office relocation. ✓Safe ✓Reliable ✓Affordable. Get FREE quotes!' }}" />
+    <meta name="keywords" content="{{ seo.meta_keywords|default:'packers and movers pune, movers pune, packers movers mumbai, home shifting pune, office relocation pune, best packers movers pune, gati packers pune, movers and packers mumbai, relocation services india' }}" />
+    <link rel="canonical" href="{{ seo.canonical_url|default:request.build_absolute_uri }}" />
+    <meta name="robots" content="{{ seo.robots|default:'index, follow' }}" />
+    
+    <!-- Geo Tags for Local SEO -->
+    <meta name="geo.region" content="IN-MH" />
+    <meta name="geo.placename" content="Pune" />
+    <meta name="geo.position" content="18.5204;73.8567" />
+    <meta name="ICBM" content="18.5204, 73.8567" />
 
-	{% include "partials/seo/seo_header.html" %}
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="{{ seo.og_type|default:'website' }}" />
+    <meta property="og:url" content="{{ request.build_absolute_uri }}" />
+    <meta property="og:title" content="{{ seo.get_og_title|default:'Expert Gati Packers and Movers - Pune & Mumbai\'s #1 Moving Company' }}" />
+    <meta property="og:description" content="{{ seo.get_og_description|default:'Professional packing & moving services in Pune, Mumbai & across India. 10+ years experience, 5000+ happy customers. Get instant free quote!' }}" />
+    {% if seo and seo.og_image %}
+    <meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{{ seo.og_image.url }}" />
+    {% else %}
+    <meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'images/og-default.jpg' %}" />
+    {% endif %}
+    <meta property="og:locale" content="en_IN" />
+    <meta property="og:site_name" content="Expert Gati Packers and Movers" />
 
+    <!-- Twitter -->
+    <meta name="twitter:card" content="{{ seo.twitter_card|default:'summary_large_image' }}" />
+    <meta name="twitter:url" content="{{ request.build_absolute_uri }}" />
+    <meta name="twitter:title" content="{{ seo.get_twitter_title|default:'Expert Gati Packers and Movers - Pune & Mumbai' }}" />
+    <meta name="twitter:description" content="{{ seo.get_twitter_description|default:'Trusted packers and movers in Pune & Mumbai. Safe, affordable & professional relocation services across India.' }}" />
+    {% if seo and seo.twitter_image %}
+    <meta name="twitter:image" content="{{ request.scheme }}://{{ request.get_host }}{{ seo.twitter_image.url }}" />
+    {% else %}
+    <meta name="twitter:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'images/twitter-default.jpg' %}" />
+    {% endif %}
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {% if seo and seo.schema_json %}
+    {{ seo.schema_json|safe }}
+    {% else %}
+    {
+      "@context": "https://schema.org",
+      "@type": "MovingCompany",
+      "name": "Expert Gati Packers and Movers",
+      "description": "Professional packers and movers service in Pune, Mumbai and across India",
+      "url": "{{ request.scheme }}://{{ request.get_host }}",
+      "telephone": "+91-XXXXXXXXXX",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Your Street Address",
+        "addressLocality": "Pune",
+        "addressRegion": "Maharashtra",
+        "postalCode": "411001",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "18.5204",
+        "longitude": "73.8567"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Pune",
+          "sameAs": "https://en.wikipedia.org/wiki/Pune"
+        },
+        {
+          "@type": "City",
+          "name": "Mumbai",
+          "sameAs": "https://en.wikipedia.org/wiki/Mumbai"
+        },
+        {
+          "@type": "State",
+          "name": "Maharashtra"
+        },
+        {
+          "@type": "Country",
+          "name": "India"
+        }
+      ],
+      "serviceType": [
+        "Home Relocation",
+        "Office Relocation",
+        "Packing Services",
+        "Loading and Unloading",
+        "Car Transportation",
+        "Storage Services",
+        "Interstate Moving",
+        "Local Shifting"
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "bestRating": "5",
+        "worstRating": "1",
+        "reviewCount": "500"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "opens": "08:00",
+        "closes": "20:00"
+      }
+    }
+    {% endif %}
+    </script>
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "{{ request.scheme }}://{{ request.get_host }}"
+        }
+      ]
+    }
+    </script>
+
+    <!-- Extra header scripts -->
+    {% if seo and seo.extra_header %}
+    {{ seo.extra_header|safe }}
+    {% endif %}
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="author" content="Expert Gati Packers and Movers">
+
+    <!-- Font Imports -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.png' %}">
+    <link rel="apple-touch-icon" href="{% static 'images/apple-touch-icon.png' %}">
+
+    <!-- Core Style -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <!-- Font Icons -->
+    <link rel="stylesheet" href="{% static 'css/font-icons.css' %}">
+
+    <!-- Plugins/Components CSS -->
+    <link rel="stylesheet" href="{% static 'css/components/datepicker.css' %}">
+
+    <!-- Niche Demos -->
+    <link rel="stylesheet" href="{% static 'demos/movers/movers.css' %}">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Additional SEO enhancements -->
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    <meta name="distribution" content="global">
+    <meta name="rating" content="general">
+    <meta name="format-detection" content="telephone=yes">
+    
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#1a73e8">
+    <meta name="msapplication-TileColor" content="#1a73e8">
 </head>
 
 <body class="stretched">
