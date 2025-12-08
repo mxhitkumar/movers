@@ -1,6 +1,10 @@
-from django.shortcuts import render
+from pyexpat.errors import messages
+from django.shortcuts import render, redirect
 from django.core.exceptions import ObjectDoesNotExist
-from .models import SEOSettings
+from .forms import ContactForm
+from .models import SEOSettings, ContactSubmission
+from django.contrib import messages
+from django.core.mail import send_mail  # for email notifications (optional)
 
 
 def get_or_create_seo(page_name, defaults):
@@ -31,7 +35,8 @@ def home(request):
 
 
 def contact(request):
-    """Contact page view"""
+    """Contact page view — handles form POST and always provides SEO data."""
+    # Ensure SEO is available for both GET and POST renderings
     seo = get_or_create_seo(
         page_name="Contact",
         defaults={
@@ -45,7 +50,32 @@ def contact(request):
             'twitter_description': "Need movers in Pune or Mumbai? Contact us for instant free quotes and professional moving services."
         }
     )
-    return render(request, "pages/contact.html", {"seo": seo})
+
+    if request.method == "POST":
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            instance = form.save(commit=False)
+            instance.ip_address = request.META.get("REMOTE_ADDR")
+            instance.save()
+
+            # Optional: send email notification (configure EMAIL settings)
+            # send_mail(
+            #     subject=f"New contact from {instance.name}",
+            #     message=instance.message,
+            #     from_email=instance.email,
+            #     recipient_list=["you@yourdomain.com"],
+            # )
+
+            messages.success(request, "Thanks! Your message has been sent. We'll contact you shortly.")
+            return redirect("contact")  # reload page (seo will be reloaded)
+        else:
+            # Form invalid — show errors and SEO together
+            messages.error(request, "Please fix the errors below.")
+    else:
+        form = ContactForm()
+
+    # Render page with both seo and form (works for GET and invalid POST)
+    return render(request, "pages/contact.html", {"seo": seo, "form": form})
 
 
 def faqs(request):

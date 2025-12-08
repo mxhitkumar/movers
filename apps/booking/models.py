@@ -1,8 +1,5 @@
 from django.db import models
-
-# Create your models here.
-from django.db import models
-
+from django.urls import reverse
 
 class SEOSettings(models.Model):
     page_name = models.CharField(
@@ -151,3 +148,43 @@ class SEOSettings(models.Model):
         
         import json
         return json.dumps(default_schema)
+    
+class BlogPost(models.Model):
+    title = models.CharField(max_length=255)
+    slug = models.SlugField(unique=True)
+    excerpt = models.TextField(blank=True)
+    content = models.TextField()
+    published = models.BooleanField(default=False)   # optional
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def get_absolute_url(self):
+        return reverse('blog:detail', kwargs={'slug': self.slug})  # ensure this url exists
+
+    def __str__(self):
+        return self.title
+    
+class ContactSubmission(models.Model):
+    SERVICE_CHOICES = [
+        ("", "-- Select One --"),
+        ("Office Moving", "Office Moving"),
+        ("Home Moving", "Home Moving"),
+        ("International Moving", "International Moving"),
+        ("Pet Moving", "Pet Moving"),
+    ]
+
+    name = models.CharField(max_length=255)
+    email = models.EmailField()
+    phone = models.CharField(max_length=50, blank=True)
+    service = models.CharField(max_length=50, choices=SERVICE_CHOICES, blank=True)
+    message = models.TextField()
+    botcheck = models.CharField(max_length=255, blank=True, help_text="Honeypot field")
+    created_at = models.DateTimeField(auto_now_add=True)
+    ip_address = models.GenericIPAddressField(null=True, blank=True)
+
+    class Meta:
+        ordering = ["-created_at"]
+
+    def __str__(self):
+        return f"{self.name} — {self.email} ({self.created_at:%Y-%m-%d %H:%M})"
+    

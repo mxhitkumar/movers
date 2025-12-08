@@ -20,7 +20,7 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="{{ seo.og_type|default:'website' }}" />
     <meta property="og:url" content="{{ request.build_absolute_uri }}" />
-    <meta property="og:title" content="{{ seo.get_og_title|default:'Expert Gati Packers and Movers - Pune & Mumbai\'s #1 Moving Company' }}" />
+    <meta property="og:title" content="{{ seo.get_og_title|default:"Expert Gati Packers and Movers - Pune & Mumbai\'s #1 Moving Company" }}" />
     <meta property="og:description" content="{{ seo.get_og_description|default:'Professional packing & moving services in Pune, Mumbai & across India. 10+ years experience, 5000+ happy customers. Get instant free quote!' }}" />
     {% if seo and seo.og_image %}
     <meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{{ seo.og_image.url }}" />

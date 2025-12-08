@@ -184,3 +184,12 @@ duplicate_seo_settings.short_description = "Duplicate selected SEO settings"
 
 # Add the action to the admin
 SEOSettingsAdmin.actions = [duplicate_seo_settings]
+
+from django.contrib import admin
+from .models import ContactSubmission
+
+@admin.register(ContactSubmission)
+class ContactSubmissionAdmin(admin.ModelAdmin):
+    list_display = ("name", "email", "service", "created_at")
+    readonly_fields = ("created_at", "ip_address")
+    search_fields = ("name", "email", "phone", "message")
