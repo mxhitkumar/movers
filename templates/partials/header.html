@@ -60,27 +60,49 @@
 				<nav class="primary-menu with-arrows">
 
 					<ul class="menu-container">
-						<li class="menu-item current"><a class="menu-link" href="{% url 'home' %}">
+
+						<li class="menu-item {% if request.resolver_match.url_name == 'home' %}current{% endif %}">
+							<a class="menu-link" href="{% url 'home' %}">
 								<div>Home</div>
-							</a></li>
-						<li class="menu-item"><a class="menu-link" href="{% url 'ourcompany' %}">
+							</a>
+						</li>
+
+						<li class="menu-item {% if request.resolver_match.url_name == 'ourcompany' %}current{% endif %}">
+							<a class="menu-link" href="{% url 'ourcompany' %}">
 								<div>Our Company</div>
-							</a></li>
-						<li class="menu-item"><a class="menu-link" href="{% url 'rates' %}">
+							</a>
+						</li>
+
+						<li class="menu-item {% if request.resolver_match.url_name == 'rates' %}current{% endif %}">
+							<a class="menu-link" href="{% url 'rates' %}">
 								<div>Rates</div>
-							</a></li>
-						<li class="menu-item"><a class="menu-link" href="{% url 'team' %}">
+							</a>
+						</li>
+
+						<li class="menu-item {% if request.resolver_match.url_name == 'team' %}current{% endif %}">
+							<a class="menu-link" href="{% url 'team' %}">
 								<div>Team</div>
-							</a></li>
-						<li class="menu-item"><a class="menu-link" href="{% url 'faqs' %}">
+							</a>
+						</li>
+
+						<li class="menu-item {% if request.resolver_match.url_name == 'faqs' %}current{% endif %}">
+							<a class="menu-link" href="{% url 'faqs' %}">
 								<div>FAQs</div>
-							</a></li>
-						<li class="menu-item"><a class="menu-link" href="{% url 'blog' %}">
+							</a>
+						</li>
+
+						<li class="menu-item {% if request.resolver_match.url_name == 'blog' %}current{% endif %}">
+							<a class="menu-link" href="{% url 'blog' %}">
 								<div>Blog</div>
-							</a></li>
-						<li class="menu-item"><a class="menu-link" href="{% url 'contact' %}">
+							</a>
+						</li>
+
+						<li class="menu-item {% if request.resolver_match.url_name == 'contact' %}current{% endif %}">
+							<a class="menu-link" href="{% url 'contact' %}">
 								<div>Contact Us</div>
-							</a></li>
+							</a>
+						</li>
+
 					</ul>
 
 				</nav><!-- #primary-menu end -->
