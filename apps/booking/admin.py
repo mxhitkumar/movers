@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.utils.html import format_html
-from .models import SEOSettings
+from .models import SEOSettings, ContactSubmission, MovingRequest
 
 
 @admin.register(SEOSettings)
@@ -193,3 +193,8 @@ class ContactSubmissionAdmin(admin.ModelAdmin):
     list_display = ("name", "email", "service", "created_at")
     readonly_fields = ("created_at", "ip_address")
     search_fields = ("name", "email", "phone", "message")
+
+@admin.register(MovingRequest)
+class MovingRequestAdmin(admin.ModelAdmin):
+    list_display = ("name", "location_from", "location_to", "date", "created_at")
+    readonly_fields = ("created_at",)

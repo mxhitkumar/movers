@@ -31,7 +31,32 @@ def home(request):
             'twitter_description': "Trusted packers and movers in Pune & Mumbai. Safe, affordable & professional relocation services across India."
         }
     )
-    return render(request, "pages/home.html", {"seo": seo})
+    
+    if request.method == "POST":
+        form = MovingRequestForm(request.POST)
+        if form.is_valid():
+            instance = form.save(commit=False)
+            instance.ip_address = request.META.get("REMOTE_ADDR")
+            instance.save()
+
+            # Optional: send email notification (configure EMAIL settings)
+            # send_mail(
+            #     subject=f"New contact from {instance.name}",
+            #     message=instance.message,
+            #     from_email=instance.email,
+            #     recipient_list=["you@yourdomain.com"],
+            # )
+
+            messages.success(request, "Thanks! Your message has been sent. We'll contact you shortly.")
+            return redirect("contact")  # reload page (seo will be reloaded)
+        else:
+            # Form invalid — show errors and SEO together
+            messages.error(request, "Please fix the errors below.")
+    else:
+        form = ContactForm()
+
+    # Render page with both seo and form (works for GET and invalid POST)
+    return render(request, "pages/home.html", {"seo": seo, "form": form})
 
 
 def contact(request):

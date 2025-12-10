@@ -188,3 +188,15 @@ class ContactSubmission(models.Model):
     def __str__(self):
         return f"{self.name} — {self.email} ({self.created_at:%Y-%m-%d %H:%M})"
     
+class MovingRequest(models.Model):
+    location_from = models.CharField(max_length=255)
+    location_to = models.CharField(max_length=255)
+    name = models.CharField(max_length=200)
+    email = models.EmailField()
+    phone = models.CharField(max_length=50)
+    date = models.DateField(null=True, blank=True)
+    botcheck = models.CharField(max_length=50, blank=True)  # honeypot
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.name} — {self.location_from} → {self.location_to} ({self.date})"
