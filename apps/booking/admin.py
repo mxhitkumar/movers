@@ -3,6 +3,11 @@ from django.utils.html import format_html
 from .models import SEOSettings, ContactSubmission, MovingRequest
 
 
+admin.site.site_header = "Gati Expert"  # Changes the main header text
+admin.site.site_title = "Expert Gati Movers and Packers"    # Changes the HTML <title> tag and the text in the browser tab
+admin.site.index_title = "Welcome to Your Expert Gati Portal" # Changes the text on the admin index page
+
+
 @admin.register(SEOSettings)
 class SEOSettingsAdmin(admin.ModelAdmin):
     list_display = [

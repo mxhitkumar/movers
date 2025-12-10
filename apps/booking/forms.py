@@ -37,8 +37,8 @@ class MovingRequestForm(forms.ModelForm):
             "location_from": forms.TextInput(attrs={"placeholder": "Location From"}),
             "location_to": forms.TextInput(attrs={"placeholder": "Location To"}),
             "name": forms.TextInput(attrs={"placeholder": "Your Full Name"}),
-            "email": forms.EmailInput(attrs={"placeholder": "Your Email"}),
-            "phone": forms.TextInput(attrs={"placeholder": "Your Phone Number"}),
+            "email": forms.EmailInput(attrs={"placeholder": "Your Email", "type": "email"}),
+            "phone": forms.TextInput(attrs={"placeholder": "Your Phone Number", "type": "number"}),
             "date": forms.TextInput(attrs={"placeholder": "Your Date", "class": "home-date"}),
             "botcheck": forms.HiddenInput(),
         }
