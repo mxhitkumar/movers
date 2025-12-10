@@ -1,7 +1,7 @@
 from pyexpat.errors import messages
 from django.shortcuts import render, redirect
 from django.core.exceptions import ObjectDoesNotExist
-from .forms import ContactForm
+from .forms import ContactForm, MovingRequestForm
 from .models import SEOSettings, ContactSubmission
 from django.contrib import messages
 from django.core.mail import send_mail  # for email notifications (optional)
@@ -48,12 +48,12 @@ def home(request):
             # )
 
             messages.success(request, "Thanks! Your message has been sent. We'll contact you shortly.")
-            return redirect("contact")  # reload page (seo will be reloaded)
+            return redirect("home")  # reload page (seo will be reloaded)
         else:
             # Form invalid — show errors and SEO together
             messages.error(request, "Please fix the errors below.")
     else:
-        form = ContactForm()
+        form = MovingRequestForm()
 
     # Render page with both seo and form (works for GET and invalid POST)
     return render(request, "pages/home.html", {"seo": seo, "form": form})
