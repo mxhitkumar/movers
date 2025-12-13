@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from .utils import validate_team_photo
 
 class SEOSettings(models.Model):
     page_name = models.CharField(
@@ -205,7 +206,7 @@ class MovingRequest(models.Model):
 class TeamMember(models.Model):
     name = models.CharField(max_length=100)
     role = models.CharField(max_length=100)
-    photo = models.ImageField(upload_to='team_photos/')
+    photo = models.ImageField(upload_to='team_photos/', validators=[validate_team_photo])
 
     def __str__(self):
         return self.name
