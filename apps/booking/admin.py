@@ -7,8 +7,6 @@ admin.site.site_header = "Gati Expert"  # Changes the main header text
 admin.site.site_title = "Expert Gati Movers and Packers"    # Changes the HTML <title> tag and the text in the browser tab
 admin.site.index_title = "Welcome to Your Expert Gati Portal" # Changes the text on the admin index page
 
-admin.site.register(TeamMember)
-
 @admin.register(SEOSettings)
 class SEOSettingsAdmin(admin.ModelAdmin):
     list_display = [
@@ -201,3 +199,18 @@ class ContactSubmissionAdmin(admin.ModelAdmin):
 class MovingRequestAdmin(admin.ModelAdmin):
     list_display = ("name", "location_from", "location_to", "date", "created_at")
     readonly_fields = ("created_at",)
+    
+@admin.register(TeamMember)
+class TeamMemberAdmin(admin.ModelAdmin):
+    list_display = ('name', 'role', 'photo_preview')
+    readonly_fields = ('photo_preview',)
+
+    def photo_preview(self, obj):
+        if obj.photo:
+            return format_html(
+                '<img src="{}" width="60" height="60" style="object-fit: cover;" />',
+                obj.photo.url
+            )
+        return "No Image"
+
+    photo_preview.short_description = "Photo"
