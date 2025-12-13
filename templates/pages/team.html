@@ -34,29 +34,32 @@
 			<div class="heading-block">
 				<h3 class="text-transform-none mb-3 fw-semibold ls-0">Our Leadership</h3>
 			</div>
+
 			<div class="row col-mb-50 mb-0">
 
+				{% for member in members %}
 				<div class="col-lg-3 col-md-6">
 
 					<div class="team">
 						<div class="team-image">
-							<img src="demos/movers/images/team/1.jpg" alt="John Doe">
+							<img src="{{ member.photo.url }}" alt="{{ member.name }}">
 						</div>
 						<div class="team-desc text-start">
 							<div class="team-title">
-								<h4 class="text-transform-none ls-0 fw-semibold">John Doe</h4>
-								<h5 class="fw-medium color mb-0">CEO</h5>
+								<h4 class="text-transform-none ls-0 fw-semibold">{{ member.name }}</h4>
+								<h5 class="fw-medium color mb-0">{{ member.role }}</h5>
 							</div>
 						</div>
 					</div>
 
 				</div>
 
+				{% endfor %}
 				<div class="col-lg-3 col-md-6">
 
 					<div class="team">
 						<div class="team-image">
-							<img src="demos/movers/images/team/2.jpg" alt="Josh Clark">
+							<img src="{% static 'demos/movers/images/team/2.jpg'%}" alt="Josh Clark">
 						</div>
 						<div class="team-desc text-start">
 							<div class="team-title">
@@ -68,121 +71,8 @@
 
 				</div>
 
-
-				<div class="col-lg-3 col-md-6">
-
-					<div class="team">
-						<div class="team-image">
-							<img src="demos/movers/images/team/3.jpg" alt="Barry Tone">
-						</div>
-						<div class="team-desc text-start">
-							<div class="team-title">
-								<h4 class="text-transform-none ls-0 fw-semibold">Barry Tone</h4>
-								<h5 class="fw-medium color mb-0">Manager</h5>
-							</div>
-						</div>
-					</div>
-
-				</div>
-
-				<div class="col-lg-3 col-md-6">
-
-					<div class="team">
-						<div class="team-image">
-							<img src="demos/movers/images/team/4.jpg" alt="Jackson Pot">
-						</div>
-						<div class="team-desc text-start">
-							<div class="team-title">
-								<h4 class="text-transform-none ls-0 fw-semibold">Jackson Pot</h4>
-								<h5 class="fw-medium color mb-0">Financer</h5>
-							</div>
-						</div>
-					</div>
-
-				</div>
-
-				<div class="col-lg-3 col-md-6">
-
-					<div class="team">
-						<div class="team-image">
-							<img src="demos/movers/images/team/5.jpg" alt="Lance Bogrol">
-						</div>
-						<div class="team-desc text-start">
-							<div class="team-title">
-								<h4 class="text-transform-none ls-0 fw-semibold">Lance Bogrol</h4>
-								<h5 class="fw-medium color mb-0">Support</h5>
-							</div>
-						</div>
-					</div>
-
-				</div>
-
-				<div class="col-lg-3 col-md-6">
-
-					<div class="team">
-						<div class="team-image">
-							<img src="demos/movers/images/team/6.jpg" alt="Weir Doe">
-						</div>
-						<div class="team-desc text-start">
-							<div class="team-title">
-								<h4 class="text-transform-none ls-0 fw-semibold">Weir Doe</h4>
-								<h5 class="fw-medium color mb-0">Support</h5>
-							</div>
-						</div>
-					</div>
-
-				</div>
-
-
-				<div class="col-lg-3 col-md-6">
-
-					<div class="team">
-						<div class="team-image">
-							<img src="demos/movers/images/team/7.jpg" alt="Fletch Skinner">
-						</div>
-						<div class="team-desc text-start">
-							<div class="team-title">
-								<h4 class="text-transform-none ls-0 fw-semibold">Fletch Skinner</h4>
-								<h5 class="fw-medium color mb-0">Delivery Boy</h5>
-							</div>
-						</div>
-					</div>
-
-				</div>
-
-				<div class="col-lg-3 col-md-6">
-
-					<div class="team">
-						<div class="team-image">
-							<img src="demos/movers/images/team/8.jpg" alt="Desmond Eagle">
-						</div>
-						<div class="team-desc text-start">
-							<div class="team-title">
-								<h4 class="text-transform-none ls-0 fw-semibold">Desmond Eagle</h4>
-								<h5 class="fw-medium color mb-0">Delivery Boy</h5>
-							</div>
-						</div>
-					</div>
-
-				</div>
-
-				<div class="col-lg-3 col-md-6">
-
-					<div class="team">
-						<div class="team-image">
-							<img src="demos/movers/images/team/9.jpg" alt="Brian Cumin">
-						</div>
-						<div class="team-desc text-start">
-							<div class="team-title">
-								<h4 class="text-transform-none ls-0 fw-semibold">Brian Cumin</h4>
-								<h5 class="fw-medium color mb-0">Delivery Boy</h5>
-							</div>
-						</div>
-					</div>
-
-				</div>
-
 			</div>
+
 		</div>
 
 		<div class="clear"></div>
@@ -200,7 +90,7 @@
 					</div>
 
 					<div class="col-md-5" style="transform: translateY(-45px)">
-						<img src="demos/movers/images/team/section.jpg" alt="John Doe">
+						<img src="{% static 'demos/movers/images/team/section.jpg'%}" alt="John Doe">
 					</div>
 				</div>
 			</div>

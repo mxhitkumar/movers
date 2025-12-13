@@ -2,7 +2,7 @@ from pyexpat.errors import messages
 from django.shortcuts import render, redirect
 from django.core.exceptions import ObjectDoesNotExist
 from .forms import ContactForm, MovingRequestForm
-from .models import SEOSettings, ContactSubmission
+from .models import SEOSettings, ContactSubmission, TeamMember
 from django.contrib import messages
 from django.core.mail import send_mail  # for email notifications (optional)
 
@@ -190,4 +190,6 @@ def teams(request):
             'twitter_description': "Meet the professional team behind Pune & Mumbai's most trusted moving company. Experienced, certified, and customer-focused."
         }
     )
-    return render(request, "pages/team.html", {"seo": seo})
+    
+    members = TeamMember.objects.all()
+    return render(request, 'pages/team.html', {"seo": seo, 'members': members})

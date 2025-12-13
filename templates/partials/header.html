@@ -73,29 +73,29 @@
 							</a>
 						</li>
 
-						{% comment %} <li class="menu-item {% if request.resolver_match.url_name == 'rates' %}current{% endif %}">
+						<li class="menu-item {% if request.resolver_match.url_name == 'rates' %}current{% endif %}">
 							<a class="menu-link" href="{% url 'rates' %}">
 								<div>Rates</div>
 							</a>
-						</li> {% endcomment %}
+						</li> 
 
-						{% comment %} <li class="menu-item {% if request.resolver_match.url_name == 'team' %}current{% endif %}">
+						<li class="menu-item {% if request.resolver_match.url_name == 'team' %}current{% endif %}">
 							<a class="menu-link" href="{% url 'team' %}">
 								<div>Team</div>
 							</a>
-						</li> {% endcomment %}
+						</li>
 
-						{% comment %} <li class="menu-item {% if request.resolver_match.url_name == 'faqs' %}current{% endif %}">
+						<li class="menu-item {% if request.resolver_match.url_name == 'faqs' %}current{% endif %}">
 							<a class="menu-link" href="{% url 'faqs' %}">
 								<div>FAQs</div>
 							</a>
-						</li> {% endcomment %}
+						</li>
 
-						{% comment %} <li class="menu-item {% if request.resolver_match.url_name == 'blog' %}current{% endif %}">
+						<li class="menu-item {% if request.resolver_match.url_name == 'blog' %}current{% endif %}">
 							<a class="menu-link" href="{% url 'blog' %}">
 								<div>Blog</div>
 							</a>
-						</li> {% endcomment %}
+						</li>
 
 						<li class="menu-item {% if request.resolver_match.url_name == 'contact' %}current{% endif %}">
 							<a class="menu-link" href="{% url 'contact' %}">

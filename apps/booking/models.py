@@ -200,3 +200,12 @@ class MovingRequest(models.Model):
 
     def __str__(self):
         return f"{self.name} — {self.location_from} → {self.location_to} ({self.date})"
+    
+    
+class TeamMember(models.Model):
+    name = models.CharField(max_length=100)
+    role = models.CharField(max_length=100)
+    photo = models.ImageField(upload_to='team_photos/')
+
+    def __str__(self):
+        return self.name

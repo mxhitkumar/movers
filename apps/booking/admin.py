@@ -1,12 +1,13 @@
 from django.contrib import admin
 from django.utils.html import format_html
-from .models import SEOSettings, ContactSubmission, MovingRequest
+from .models import SEOSettings, ContactSubmission, MovingRequest, TeamMember
 
 
 admin.site.site_header = "Gati Expert"  # Changes the main header text
 admin.site.site_title = "Expert Gati Movers and Packers"    # Changes the HTML <title> tag and the text in the browser tab
 admin.site.index_title = "Welcome to Your Expert Gati Portal" # Changes the text on the admin index page
 
+admin.site.register(TeamMember)
 
 @admin.register(SEOSettings)
 class SEOSettingsAdmin(admin.ModelAdmin):
@@ -189,9 +190,6 @@ duplicate_seo_settings.short_description = "Duplicate selected SEO settings"
 
 # Add the action to the admin
 SEOSettingsAdmin.actions = [duplicate_seo_settings]
-
-from django.contrib import admin
-from .models import ContactSubmission
 
 @admin.register(ContactSubmission)
 class ContactSubmissionAdmin(admin.ModelAdmin):
