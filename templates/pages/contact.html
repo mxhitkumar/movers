@@ -103,7 +103,7 @@
 				</div>
 				<div class="col-lg-7">
 					<h3>Contact Us</h3>
-					<div class="row">
+					{% comment %} <div class="row">
 						<div class="col-md-4 col-6 text-smaller">
 							<h5 class="fw-semibold mb-2">Melborne Headquaters:</h5>
 							<address class="mb-2">
@@ -134,10 +134,93 @@
 							Fax: <a href="{% url 'contact' %}#" class="text-dark">+918199073923</a><br>
 							Email: <a href="{% url 'contact' %}#" class="text-dark">info@expertgatipackers.com</a>
 						</div>
-					</div>
-					<div class="line my-5"></div>
-					<h4>Global Offices:</h4>
+					</div> {% endcomment %}
+
 					<div class="row">
+						<!-- Column 1 -->
+						<div class="col-md-4 col-6 text-smaller">
+							<h5 class="fw-semibold mb-2">Pune Locations:</h5>
+
+							<address class="mb-2">
+								Hinjewadi Phase 1,<br>
+								Pune, Maharashtra 411057
+							</address>
+
+							<address class="mb-2">
+								Hinjewadi Phase 2,<br>
+								Pune, Maharashtra 411057
+							</address>
+
+							<address class="mb-2">
+								Hinjewadi Phase 3,<br>
+								Pune, Maharashtra 411057
+							</address>
+
+							<address class="mb-2">
+								Marunji,<br>
+								Pune, Maharashtra 411057
+							</address>
+
+							Phone: <a href="{% url 'contact' %}#" class="text-dark">+91 81990 73923</a><br>
+							Email: <a href="{% url 'contact' %}#" class="text-dark">info@expertgatipackers.com</a>
+						</div>
+
+						<!-- Column 2 -->
+						<div class="col-md-4 col-6 text-smaller">
+							<h5 class="fw-semibold mb-2">Additional Areas:</h5>
+
+							<address class="mb-2">
+								Baner Gaon,<br>
+								Pune, Maharashtra 411045
+							</address>
+
+							<address class="mb-2">
+								Lavale,<br>
+								Pune, Maharashtra 412115
+							</address>
+
+							<address class="mb-2">
+								Viman Nagar,<br>
+								Pune, Maharashtra 411014
+							</address>
+
+							<address class="mb-2">
+								Bavdhan,<br>
+								Pune, Maharashtra 411021
+							</address>
+
+							Phone: <a href="{% url 'contact' %}#" class="text-dark">+91 81990 73923</a><br>
+							Email: <a href="{% url 'contact' %}#" class="text-dark">info@expertgatipackers.com</a>
+						</div>
+
+						<!-- Column 3 -->
+						<div class="col-md-4 col-6 text-smaller mt-5 mt-md-0">
+							<h5 class="fw-semibold mb-2">Prime Locations:</h5>
+
+							<address class="mb-2">
+								Koregaon Park,<br>
+								Pune, Maharashtra 411001
+							</address>
+
+							<address class="mb-2">
+								Hadapsar,<br>
+								Pune, Maharashtra 411028
+							</address>
+
+							<address class="mb-2">
+								Punawale,<br>
+								Pune, Maharashtra 411033
+							</address>
+
+							Phone: <a href="{% url 'contact' %}#" class="text-dark">+91 81990 73923</a><br>
+							Email: <a href="{% url 'contact' %}#" class="text-dark">info@expertgatipackers.com</a>
+						</div>
+					</div>
+
+
+					{% comment %} <div class="line my-5"></div>
+					<h4>Global Offices:</h4> {% endcomment %}
+					{% comment %} <div class="row">
 						<div class="col-md-4 col-6 text-smaller mb-5">
 							<h5 class="fw-semibold mb-2">Singapore:</h5>
 							<address class="mb-2">
@@ -148,7 +231,7 @@
 							Fax: <a href="{% url 'contact' %}#" class="text-dark">+918199073923</a><br>
 							Email: <a href="{% url 'contact' %}#" class="text-dark">info@expertgatipackers.com</a>
 						</div>
-					</div>
+					</div> {% endcomment %}
 				</div>
 			</div>
 		</div>
