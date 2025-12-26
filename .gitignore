@@ -28,9 +28,9 @@ db.sqlite3-journal
 # /static/
 
 # Keep static source files but ignore collected static
-!/staticfiles/
-/staticfiles/*
-!/staticfiles/.gitkeep
+# !/staticfiles/
+# /staticfiles/*
+# !/staticfiles/.gitkeep
 
 # Django migrations (optional - uncomment if you don't want to track migrations)
 # */migrations/*.py
